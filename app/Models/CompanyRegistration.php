@@ -1,0 +1,60 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use App\Models\RegistrationTransaction;
+use App\Models\CompanyRegistration;
+use App\Models\BodyObjectives;
+use App\Models\PartnersAndDirector;
+use App\Models\RegistrationItem;
+use App\Models\Secretary;
+use App\Models\Name;
+
+class CompanyRegistration extends Model
+{
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function($file){
+            $file->identifier = 'LH-COMPANY'.uniqid(true);
+        });
+    }
+
+    public function registrationTransactions()
+    {
+        return $this->morphMany(RegistrationTransaction::class, 'transactionable');
+    }
+
+    public function companyNames()
+    {
+        return $this->morphMany(Name::class, 'nameable');
+    }
+    
+    public function bodyObjectives()
+    {
+        return $this->morphMany(BodyObjective::class, 'objectable');
+    }
+
+    public function partnersAndDirectors()
+    {
+        return $this->morphMany(PartnersAndDirector::class, 'directable');
+    }
+
+    public function uploads()
+    {
+        return $this->morphMany(Upload::class, 'uploadable');
+    }
+
+    public function shareholdings()
+    {
+        return $this->hasMany(Shareholding::class);
+    }
+
+    public function secretaries()
+    {
+        return $this->hasMany(Secretary::class);
+    }
+
+}

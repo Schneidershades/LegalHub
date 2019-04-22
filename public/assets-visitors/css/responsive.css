@@ -1,0 +1,329 @@
+/*
+==========================================
+   Screen Size max 370px
+==========================================
+*/
+@media screen and (max-width: 370px) {
+  h1, h2 {
+    font-size: 1.9rem !important;
+  }
+
+  h5 {
+    font-size: 0.9rem;
+  }
+}
+/*
+==========================================
+   Screen Size max 387px
+==========================================
+*/
+@media screen and (max-width: 387px) {
+  .call-to-action .apps-button {
+    flex-wrap: wrap;
+  }
+  .call-to-action .apps-button li:first-child a {
+    padding-right: 0;
+  }
+}
+/*
+==========================================
+   Screen Size max 388px to 403px
+==========================================
+*/
+@media screen and (min-width: 388px) and (max-width: 403px) {
+  .call-to-action .apps-button {
+    flex-wrap: wrap;
+  }
+  .call-to-action .apps-button li a {
+    padding: 10px !important;
+  }
+}
+/*
+==========================================
+   Screen Size 575px
+==========================================
+*/
+@media screen and (max-width: 575px) {
+  body::before {
+    left: -100px;
+    top: -10px;
+  }
+
+  h1, h2 {
+    font-size: 2rem !important;
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+
+  .m-mt-30 {
+    margin-top: 30px;
+  }
+
+  .m-mb-30 {
+    margin-bottom: 30px;
+  }
+
+  .hero-area {
+    padding-top: 160px;
+  }
+  .hero-area .alpha-img {
+    margin-top: 50px;
+  }
+  .hero-area .alpha-img .alpha-target {
+    mask-image: url("../images/mask-mb.png");
+    -webkit-mask-image: url("../images/mask-mb.png");
+  }
+  .hero-area .video-play-wrapper .video-btn a i {
+    padding: 15px;
+    font-size: 25px;
+  }
+
+  .about .about-right {
+    padding-left: 0px;
+    margin-top: 30px;
+  }
+
+  .service .title {
+    padding: 0 5px;
+  }
+  .service .alpha-img .alpha-target {
+    mask-image: url("../images/mask-mb.png");
+    -webkit-mask-image: url("../images/mask-mb.png");
+    mask-position: right !important;
+    -webkit-mask-position: right !important;
+  }
+  .service .service-wrapper .text-block {
+    border-radius: 0%;
+  }
+  .service .title-block.pt-90 {
+    padding-top: 50px;
+  }
+
+  .portfolio .portfolio-row {
+    margin-top: 80px;
+  }
+
+  .testimonial .alpha-img {
+    margin-bottom: 50px;
+  }
+  .testimonial .alpha-img .alpha-target {
+    mask-image: url("../images/mask-mb.png");
+    -webkit-mask-image: url("../images/mask-mb.png");
+    mask-position: right !important;
+    -webkit-mask-position: right !important;
+  }
+
+  .partner::after {
+    display: none;
+  }
+  .partner .partner-carousel {
+    margin-top: 50px;
+  }
+  .partner .owl-carousel .owl-item img {
+    width: 90% !important;
+  }
+
+  .contact .title {
+    padding: 0 5px;
+  }
+
+  .footer .top-footer .col-title {
+    margin-bottom: 30px;
+  }
+  .footer .top-footer .col-second,
+  .footer .top-footer .col-third,
+  .footer .top-footer .col-forth {
+    margin-top: 50px;
+  }
+}
+/*
+==========================================
+   Screen Size 576px to 767px
+==========================================
+*/
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  body::before {
+    left: -50px;
+    top: -15px;
+  }
+
+  .mg-mb-30 {
+    margin-bottom: 30px;
+  }
+
+  .mg-mt-30 {
+    margin-top: 30px;
+  }
+
+  .mg-mb-50 {
+    margin-bottom: 50px;
+  }
+
+  .mg-mt-50 {
+    margin-top: 50px;
+  }
+
+  .hero-area .alpha-img .alpha-target {
+    mask-image: url("../images/mask-mb.png");
+    -webkit-mask-image: url("../images/mask-mb.png");
+    mask-position: right !important;
+    -webkit-mask-position: right !important;
+  }
+
+  .about .about-right {
+    padding-left: 0px;
+    padding-top: 20px;
+  }
+
+  .service .service-wrapper .text-block {
+    border-radius: 0%;
+    padding: 70px 30px;
+  }
+  .service .alpha-img .alpha-target {
+    mask-image: url("../images/mask-mb.png");
+    -webkit-mask-image: url("../images/mask-mb.png");
+    mask-position: right !important;
+    -webkit-mask-position: right !important;
+  }
+
+  .portfolio .portfolio-row {
+    margin-top: 80px;
+  }
+
+  .testimonial {
+    position: relative;
+  }
+  .testimonial .alpha-img .alpha-target {
+    mask-image: url("../images/mask-mb.png");
+    -webkit-mask-image: url("../images/mask-mb.png");
+    mask-position: right !important;
+    -webkit-mask-position: right !important;
+    margin-bottom: 50px;
+  }
+
+  .partner::after {
+    display: none;
+  }
+  .partner .partner-carousel {
+    margin-top: 50px;
+  }
+  .partner .owl-carousel .owl-item img {
+    width: 80% !important;
+  }
+
+  .contact .contact-form textarea {
+    height: 170px;
+  }
+
+  .footer .top-footer .col-title {
+    margin-bottom: 30px;
+  }
+}
+/*
+==========================================
+   Screen Size 768px to 991px
+==========================================
+*/
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  body::before {
+    left: -55px;
+  }
+
+  .lg-mt-30 {
+    margin-top: 30px;
+  }
+
+  .lg-mb-30 {
+    margin-bottom: 30px;
+  }
+
+  .lg-mt-50 {
+    margin-top: 50px;
+  }
+
+  .lg-mb-50 {
+    margin-bottom: 50px;
+  }
+
+  .portfolio .portfolio-row {
+    margin-top: 80px;
+  }
+
+  .partner::after {
+    display: none;
+  }
+  .partner .partner-carousel {
+    margin-top: 50px;
+  }
+
+  .contact .contact-form textarea {
+    height: 171px;
+  }
+
+  .footer .top-footer .col-title {
+    margin-bottom: 30px;
+  }
+}
+/*
+==========================================
+   Screen Size 992px to end screen
+==========================================
+*/
+@media screen and (min-width: 992px) {
+  .main-nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .mt-30 {
+    margin-top: 30px;
+  }
+
+  .mb-30 {
+    margin-bottom: 30px;
+  }
+
+  .mt-80 {
+    margin-top: 80px;
+  }
+}
+/*
+==========================================
+   Screen Size 992px to 1200px
+==========================================
+*/
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .header .main-nav li a {
+    font-size: 12px;
+  }
+  .header.scrolled .main-nav li a {
+    font-size: 12px;
+  }
+}
+/*
+==========================================
+   Screen Size max 991px
+==========================================
+*/
+@media screen and (max-width: 991px) {
+  .navbar-nav {
+    background: #edeffc;
+    padding: 25px;
+  }
+  .navbar-nav .nav-item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #ffffff;
+  }
+  .navbar-nav .nav-item:last-child {
+    border-bottom: 0px solid #ffffff;
+  }
+  .navbar-nav .nav-item:last-child a {
+    margin-top: 15px;
+  }
+}
+
+/*# sourceMappingURL=responsive.css.map */
