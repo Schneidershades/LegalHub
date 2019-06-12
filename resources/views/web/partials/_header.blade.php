@@ -6,7 +6,7 @@
                 <!-- Navbar Area Start -->
                 <nav class="navbar navbar-expand-lg navbar-light nav-container">
                     <!-- Logo Content -->
-                    <a class="navbar-brand" href="#"><img src="{{URL::to('assets-visitors/images/logo-full.png')}}" alt="Logo" class="img-logo"></a>
+                    <a class="navbar-brand" href="#"><img src="{{URL::to('assets-visitors/images/lh2.svg')}}" alt="Logo" class="img-logo"></a>
                     <!-- Responsive Button -->
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nabvarToggle" aria-controls="nabvarToggle" aria-expanded="true" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>

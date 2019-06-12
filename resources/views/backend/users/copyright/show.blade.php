@@ -181,7 +181,6 @@
 						<label for="input-13">Country</label><br>
 						<b>{{$partner->country}}</b>
 					</div>
-					
 					<!-- <div class="col-md-4">			
 						<label for="input-13">ID Image</label>
 						<input type="file" name="id_image" class="form-control form-control-rounded"/>
@@ -198,6 +197,16 @@
 					</div> -->
 				</div>
 				@endforeach
+
+				<div class="card-title text-uppercase "><i class="fa fa-address-book-o"></i> Copyright Class</div>
+				<hr>
+
+				<div class="form-row">
+					<div class="col-md-4">
+						<label for="input-13">Copyright Work</label><br>
+						<img src="{{URL::to($copyright->copyright_file)}}" alt="{{$partner->name}}" style="height:60%; width:40%">
+					</div>
+				</div><br>
 
 				
 

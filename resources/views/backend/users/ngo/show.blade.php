@@ -143,6 +143,16 @@
 						<label for="input-13">Country</label><br>
 						<b>{{$partner->country}}</b>
 					</div>
+
+					<div class="col-md-4">
+						<label for="input-13">Upload Image</label><br>
+						<img src="{{URL::to($partner->upload_id)}}" alt="{{$partner->full_name}}" style="height:60%; width:40%">
+					</div>
+
+					<div class="col-md-4">
+						<label for="input-13">Signature Image</label><br>
+						<img src="{{URL::to($partner->signature)}}" alt="{{$partner->full_name}}" style="height:60%; width:40%">
+					</div>
 					
 					<!-- <div class="col-md-4">			
 						<label for="input-13">ID Image</label>

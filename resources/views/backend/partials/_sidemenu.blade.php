@@ -3,7 +3,7 @@
 <div id="sidebar-wrapper" data-simplebar="init" data-simplebar-auto-hide="true" class="active"><div class="simplebar-track vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="visibility: visible; top: 0px; height: 364px;"></div></div><div class="simplebar-track horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar"></div></div><div class="simplebar-scroll-content" style="padding-right: 17px; margin-bottom: -34px;"><div class="simplebar-content" style="padding-bottom: 17px; margin-right: -17px;">
      <div class="brand-logo">
       <a href="/home">
-       <img src="{{URL::to('assets/images/logo-icon.png')}}" class="logo-icon" alt="logo icon">
+       <img src="{{URL::to('assets-visitors/images/lh2.svg')}}" class="logo-icon" height="50px" alt="logo icon">
        <h5 class="logo-text">LEGALHUB</h5>
      </a>
    </div>

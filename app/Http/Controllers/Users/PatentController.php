@@ -99,70 +99,47 @@ class PatentController extends Controller
             $applicant->description = $patent_applicant_detail['patent_description'];
 
             if ($patent_applicant_detail['upload_id']){
-                // add the new photo
-                $image = $patent_applicant_detail['upload_id'];
-                $filename = $patent_applicant_detail['full_name'] . '.' . $image->getClientOriginalExtension();
-                $directory = 'assets/files/'.$patentRegistration->identifier .'/applicants/upload_id/';
-                $path = 'assets/files/'.$patentRegistration->identifier .'/applicants/upload_id/' . $filename;
-
-                if(!File::exists($directory)) {
-                    // path does not exist
-                    File::makeDirectory($directory, $mode = 0777, true, true);
-                }
-                
-                Image::make($image)->resize(400, 400)->save($path);
-
+                $path = FunctionHelpers::uploadAnything(
+                    $patent_applicant_detail['upload_id'], 
+                    $patent_applicant_detail['full_name'], 
+                    'assets/files/'.$patentRegistration->identifier .'/applicants/upload_id/', 
+                    $applicant->upload_id
+                );
                 $oldFilename = $applicant->upload_id;
                 // add the new photo
                 $applicant->upload_id = $path;
                 // delete the old photo
                 Storage::delete($oldFilename);
-
             }
 
             if ($patent_applicant_detail['signature']){
-                // add the new photo
-                $image = $patent_applicant_detail['signature'];
-                $filename = $patent_applicant_detail['full_name']. '.' . $image->getClientOriginalExtension();
-                $directory = 'assets/files/'.$patentRegistration->identifier.'/applicants/signature/';
-                $path = 'assets/files/'.$patentRegistration->identifier.'/applicants/signature/' . $filename;
-
-                if(!File::exists($directory)) {
-                    // path does not exist
-                    File::makeDirectory($directory, $mode = 0777, true, true);
-                }
-                
-                Image::make($image)->resize(600, 600)->save($path);
-
+                $path = FunctionHelpers::uploadAnything(
+                    $patent_applicant_detail['signature'], 
+                    $patent_applicant_detail['full_name'], 
+                    'assets/files/'.$patentRegistration->identifier .'/applicants/signature/', 
+                    $applicant->upload_id
+                );
                 $oldFilename = $applicant->signature;
                 // add the new photo
                 $applicant->signature = $path;
                 // delete the old photo
                 Storage::delete($oldFilename);
-
             }
 
             if ($patent_applicant_detail['content_file']){
-                // add the new photo
-                $image = $patent_applicant_detail['content_file'];
-                $filename = $patent_applicant_detail['full_name']. '.' . $image->getClientOriginalExtension();
-                $directory = 'assets/files/'.$patentRegistration->identifier.'/applicants/content_file/';
-                $path = 'assets/files/'.$patentRegistration->identifier.'/applicants/content_file/' . $filename;
-
-                if(!File::exists($directory)) {
-                    // path does not exist
-                    File::makeDirectory($directory, $mode = 0777, true, true);
-                }
-
-                Image::make($image)->resize(600, 600)->save($path);
-                
+                $path = FunctionHelpers::uploadAnything(
+                    $patent_applicant_detail['content_file'], 
+                    $patent_applicant_detail['full_name'], 
+                    'assets/files/'.$patentRegistration->identifier .'/applicants/content_file/', 
+                    $applicant->upload_id
+                );
                 $oldFilename = $applicant->content_file;
                 // add the new photo
                 $applicant->content_file = $path;
                 // delete the old photo
                 Storage::delete($oldFilename);
-
             }
+
             $patentRegistration->applicants()->save($applicant);
         }
 
@@ -220,7 +197,88 @@ class PatentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         // dd($request->all());
+        $patentRegistration = PatentRegistration::where('identifier', $id)->first();
+        $name = new Name;
+
+        $patentRegistration->company_name = $request->company_name;
+        $patentRegistration->title = $request->title;
+        $patentRegistration->agent_name = $request->agent_name;
+        $patentRegistration->agent_number = $request->agent_number;
+        $patentRegistration->letter_addressing = $request->letter_addressing;
+        $patentRegistration->indiviual_company_name = $request->indiviual_company_name;
+        $patentRegistration->save();
+        
+        // save all the patent names
+        // foreach($request->patent_applicant_details as $patent_applicant_detail){
+        //     $name->name = $patent_applicant_detail['name'];
+        //     $patentRegistration->patentNames()->save($name);
+        // }
+
+        // all save all the patent objectives
+        foreach($request->patent_statement_details as $patent_statement_detail){
+            $statements = new BodyObjective;
+            $statements->description = $patent_statement_detail['patent_statement'];
+            $statements->user_id = Auth::id();
+            $patentRegistration->statements()->save($statements);
+        }
+        
+
+        // all save all the patent partners and directors
+        foreach($request->patent_applicant_details as $patent_applicant_detail){
+            $applicant = new PartnersAndDirector;
+            $applicant->full_name = $patent_applicant_detail['full_name'];
+            $applicant->email = $patent_applicant_detail['email'];
+            $applicant->phone_number = $patent_applicant_detail['phone_number'];
+            // $applicant->nationality = $patent_applicant_detail['nationality'];
+            $applicant->address = $patent_applicant_detail['address'];
+            $applicant->description = $patent_applicant_detail['patent_description'];
+
+            if ($patent_applicant_detail['upload_id']){
+                $path = FunctionHelpers::uploadAnything(
+                    $patent_applicant_detail['upload_id'], 
+                    $patent_applicant_detail['full_name'], 
+                    'assets/files/'.$patentRegistration->identifier .'/applicants/upload_id/', 
+                    $applicant->upload_id
+                );
+                $oldFilename = $applicant->upload_id;
+                // add the new photo
+                $applicant->upload_id = $path;
+                // delete the old photo
+                Storage::delete($oldFilename);
+            }
+
+            if ($patent_applicant_detail['signature']){
+                $path = FunctionHelpers::uploadAnything(
+                    $patent_applicant_detail['signature'], 
+                    $patent_applicant_detail['full_name'], 
+                    'assets/files/'.$patentRegistration->identifier .'/applicants/signature/', 
+                    $applicant->upload_id
+                );
+                $oldFilename = $applicant->signature;
+                // add the new photo
+                $applicant->signature = $path;
+                // delete the old photo
+                Storage::delete($oldFilename);
+            }
+
+            if ($patent_applicant_detail['content_file']){
+                $path = FunctionHelpers::uploadAnything(
+                    $patent_applicant_detail['content_file'], 
+                    $patent_applicant_detail['full_name'], 
+                    'assets/files/'.$patentRegistration->identifier .'/applicants/content_file/', 
+                    $applicant->upload_id
+                );
+                $oldFilename = $applicant->content_file;
+                // add the new photo
+                $applicant->content_file = $path;
+                // delete the old photo
+                Storage::delete($oldFilename);
+            }
+
+            $patentRegistration->applicants()->save($applicant);
+        }
+        return redirect()->route('patent.show', $patentRegistration->identifier);
     }
 
     /**

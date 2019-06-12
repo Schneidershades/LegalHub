@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2018 (64-Bit Evaluation Version) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="11.6929in" height="8.26772in" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 11692.91 8267.72"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil4 {fill:#FFF212}
+    .fil3 {fill:#EEDE2C}
+    .fil1 {fill:#FFF212;fill-rule:nonzero}
+    .fil2 {fill:#EEDE2C;fill-rule:nonzero}
+    .fil0 {fill:url(#id1)}
+   ]]>
+  </style>
+     <clipPath id="id0">
+      <path d="M4372.01 4982.86l0 0 -4.48 -2.41 0 -2096.05c0.26,-0.61 0.79,-0.61 1.06,-1.21 2.37,-3.02 3.43,-4.23 3.43,-4.23l0 0c0,0 140.98,192.64 471.69,248.8l0 0c0.26,0 0.79,0.6 1.31,0.6 56.92,9.66 106.72,13.28 149.94,13.28l0 0 0 0 0 0c0,0 0,0 0,0 85.64,0 145.98,-15.09 186.83,-32.61 52.96,-22.35 73.52,-48.31 73.78,-48.31 0,0 0,0 0,0 0,0 21.08,115.94 21.08,295.3 0,422.71 -117.53,1195.67 -904.63,1626.83l0 0z"/>
+     </clipPath>
+  <linearGradient id="id1" gradientUnits="userSpaceOnUse" x1="3415.15" y1="3930.95" x2="5926.76" y2="3930.95">
+   <stop offset="0" style="stop-opacity:1; stop-color:#2E2E32"/>
+   <stop offset="0.6" style="stop-opacity:1; stop-color:#35363C"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#565B6C"/>
+  </linearGradient>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_2357699492336">
+   <g>
+    <path class="fil0" d="M4372 4983.1c-18.21,-9.99 -36.01,-20.12 -53.5,-30.46 -779.59,-460.52 -861.52,-1266.62 -850.22,-1661.2 4.07,-142.11 20.22,-230.83 20.22,-230.83 0,0 41.82,53.08 161.78,73.37 28.37,4.82 61.13,7.78 98.72,7.78 43.67,0 93.87,-4.01 151.41,-13.8 296.84,-50.45 440.87,-211.2 467.17,-243.46l0 2096.06 4.44 2.54zm622.97 -1841.33l0 0c0.02,0 0.02,0 0.03,0 -0.01,0 -0.01,0 -0.03,0zm-0.02 0c-43.3,0 -92.97,-3.94 -149.87,-13.54 56.89,9.61 106.59,13.54 149.87,13.54z"/>
+    <g style="clip-path:url(#id0)">
+     <image x="4357.25" y="2863.27" width="929.67" height="2130.47" xlink:href="legal hub_Images\legal hub_ImgID1.png"/>
+    </g>
+   </g>
+   <polygon class="fil1" points="4274.7,4006.02 4575.23,4006.02 4575.23,4304.47 4813.08,4304.47 4813.08,3502.89 4575.23,3502.89 4575.23,3821.92 4274.7,3821.92 "/>
+   <polygon class="fil2" points="3943.96,4304.47 4467.42,4304.47 4467.42,4105.51 4181.8,4105.51 4181.8,3502.89 3943.96,3502.89 "/>
+   <rect class="fil3" x="4274.71" y="3821.92" width="92.83" height="184.1"/>
+   <rect class="fil4" x="4367.53" y="4105.51" width="99.89" height="198.97"/>
+  </g>
+ </g>
+</svg>

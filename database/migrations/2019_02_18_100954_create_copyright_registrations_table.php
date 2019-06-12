@@ -27,8 +27,8 @@ class CreateCopyrightRegistrationsTable extends Migration
             $table->text('issues')->nullable();
             $table->text('error')->nullable();
             $table->string('approval')->default('Pending');
-            $table->integer('execution')->nullable();
-            $table->integer('copyright_file')->nullable();
+            $table->string('execution')->nullable();
+            $table->text('copyright_file')->nullable();
             $table->timestamps();
         });
     }

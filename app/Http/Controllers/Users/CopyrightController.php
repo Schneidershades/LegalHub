@@ -18,32 +18,16 @@ use Storage;
 
 class CopyrightController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         return view('backend.users.copyright.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('backend.users.copyright.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         // dd($request->all());
@@ -63,25 +47,18 @@ class CopyrightController extends Controller
         $copyrightRegistration->state = $request->state;
         $copyrightRegistration->country = $request->country;
 
-        if ($request['upload_id']){
-                // add the new photo
-            $image = $request['upload_id'];
-            $filename = $request['name'] . '.' . $image->getClientOriginalExtension();
-            $directory = 'assets/files/'.$copyrightRegistration->identifier .'/copyright_file/';
-            $path = 'assets/files/'.$copyrightRegistration->identifier .'/copyright_file/' . $filename;
-
-            if(!File::exists($directory)) {
-                // path does not exist
-                File::makeDirectory($directory, $mode = 0777, true, true);
-            }
-            Image::make($image)->resize(400, 400)->save($path);
-
+        if ($request->copyright_file){
+            $path = FunctionHelpers::uploadAnything(
+                $request->copyright_file, 
+                $request->name, 
+                'assets/files/'.$copyrightRegistration->identifier .'/copyright_file/', 
+                $copyrightRegistration->copyright_file
+            );
             $oldFilename = $copyrightRegistration->copyright_file;
             // add the new photo
             $copyrightRegistration->copyright_file = $path;
             // delete the old photo
             Storage::delete($oldFilename);
-
         }
         
         $copyrightRegistration->save();
@@ -96,7 +73,6 @@ class CopyrightController extends Controller
             $agent->city = $agent_detail['city'];
             $agent->state = $agent_detail['state'];
             $agent->country = $agent_detail['country'];
-
             $copyrightRegistration->agents()->save($agent);
         }
 
@@ -113,12 +89,6 @@ class CopyrightController extends Controller
         return redirect()->route('copyright.show', $copyrightRegistration->identifier);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $copyright = CopyrightRegistration::where('identifier', $id)->first();
@@ -129,12 +99,6 @@ class CopyrightController extends Controller
                 ->with('copyright', $copyright);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $copyright = CopyrightRegistration::where('identifier', $id)->first();
@@ -145,24 +109,49 @@ class CopyrightController extends Controller
                 ->with('copyright', $copyright);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        $copyrightRegistration = CopyrightRegistration::where('identifier', $id)->first();        
+        $copyrightRegistration->name = $request->name;
+        $copyrightRegistration->dob = $request->dob;
+        $copyrightRegistration->email = $request->email;
+        $copyrightRegistration->phone_number = $request->phone_number;
+        $copyrightRegistration->address = $request->address;
+        $copyrightRegistration->city = $request->city;
+        $copyrightRegistration->state = $request->state;
+        $copyrightRegistration->country = $request->country;
+
+        if ($request->copyright_file){
+            $path = FunctionHelpers::uploadAnything(
+                $request->copyright_file, 
+                $request->name, 
+                'assets/files/'.$copyrightRegistration->identifier .'/copyright_file/', 
+                $copyrightRegistration->copyright_file
+            );
+            $oldFilename = $copyrightRegistration->copyright_file;
+            // add the new photo
+            $copyrightRegistration->copyright_file = $path;
+            // delete the old photo
+            Storage::delete($oldFilename);
+        }
+        
+        $copyrightRegistration->save();
+
+        // all save all the company partners and directors
+        foreach($request->agent_owner_details as $agent_detail){
+            $agent = new PartnersAndDirector;
+            $agent->full_name = $agent_detail['full_name'];
+            $agent->email = $agent_detail['email'];
+            $agent->phone_number = $agent_detail['phone_number'];
+            $agent->address = $agent_detail['address'];
+            $agent->city = $agent_detail['city'];
+            $agent->state = $agent_detail['state'];
+            $agent->country = $agent_detail['country'];
+            $copyrightRegistration->agents()->save($agent);
+        }
+        return redirect()->route('copyright.show', $copyrightRegistration->identifier);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //

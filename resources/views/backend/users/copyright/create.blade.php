@@ -38,7 +38,7 @@
 						</div>					
 						<div class="col-md-5">
 							<label for="input-13">Date of Birth</label>
-							<input type="dob" id="default-datepicker" name="dob" class="form-control form-control-rounded" required/>
+							<input type="date" id="default-datepicker" name="dob" class="form-control form-control-rounded" required/>
 						</div>
 
 						<div class="col-md-3">

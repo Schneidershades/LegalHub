@@ -20,11 +20,6 @@ use Storage;
 
 class BusinessRegistrationController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('auth');
@@ -35,22 +30,11 @@ class BusinessRegistrationController extends Controller
     	return view('backend.users.business.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('backend.users.business.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         // dd($request->all());
@@ -100,11 +84,11 @@ class BusinessRegistrationController extends Controller
 
             if ($business_partners_detail['upload_id']){
                 $path = FunctionHelpers::uploadAnything(
-                            $business_partners_detail['upload_id'], 
-                            $business_partners_detail['full_name'], 
-                            'assets/files/'.$businessRegistration->identifier .'/partners/upload_id/', 
-                            $partnersAndDirector->upload_id
-                        );
+                    $business_partners_detail['upload_id'], 
+                    $business_partners_detail['full_name'], 
+                    'assets/files/'.$businessRegistration->identifier .'/partners/upload_id/', 
+                    $partnersAndDirector->upload_id
+                );
                 $oldFilename = $partnersAndDirector->upload_id;
                 // add the new photo
                 $partnersAndDirector->upload_id = $path;
@@ -114,11 +98,11 @@ class BusinessRegistrationController extends Controller
 
             if ($business_partners_detail['signature']){
                 $path = FunctionHelpers::uploadAnything(
-                            $business_partners_detail['signature'],
-                            $business_partners_detail['full_name'], 
-                            'assets/files/'.$businessRegistration->identifier .'/partners/signature/', 
-                            $partnersAndDirector->signature
-                        );
+                    $business_partners_detail['signature'],
+                    $business_partners_detail['full_name'], 
+                    'assets/files/'.$businessRegistration->identifier .'/partners/signature/', 
+                    $partnersAndDirector->signature
+                );
                 $oldFilename = $partnersAndDirector->signature;
                 // add the new photo
                 $partnersAndDirector->signature = $path;
@@ -145,12 +129,6 @@ class BusinessRegistrationController extends Controller
         return redirect()->route('business.show', $businessRegistration->identifier);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $business = BusinessRegistration::where('identifier', $id)->first();
@@ -161,12 +139,6 @@ class BusinessRegistrationController extends Controller
                 ->with('business', $business);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $business = BusinessRegistration::where('identifier', $id)->first();
@@ -177,24 +149,67 @@ class BusinessRegistrationController extends Controller
                 ->with('business', $business);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        $businessRegistration = BusinessRegistration::where('identifier', $id)->first();
+        $businessRegistration->business_address = $request->business_address;
+        $businessRegistration->business_branch_address = $request->business_branch;
+        $businessRegistration->save();
+        
+        foreach($request->business_name_details as $business_name){
+            $name = new Name;
+            $name->name = $business_name['business_name'];
+            $businessRegistration->businessNames()->save($name);
+        }
+        // dd( $request->business_partners_details); 
+        foreach($request->business_partners_details as $business_partners_detail){ 
+            $partnersAndDirector = new PartnersAndDirector;
+            $partnersAndDirector->full_name = $business_partners_detail['full_name'];
+            $partnersAndDirector->email = $business_partners_detail['email'];
+            $partnersAndDirector->identity_type = $business_partners_detail['identity_type'];
+            $partnersAndDirector->identity_no = $business_partners_detail['identity_no'];
+            $partnersAndDirector->phone_number = $business_partners_detail['phone_number'];
+            $partnersAndDirector->gender = $business_partners_detail['gender'];
+            $partnersAndDirector->dob = $business_partners_detail['dob'];
+            $partnersAndDirector->nationality = $business_partners_detail['nationality'];
+            $partnersAndDirector->address = $business_partners_detail['address'];
+            $partnersAndDirector->city = $business_partners_detail['city'];
+            $partnersAndDirector->state = $business_partners_detail['state'];
+            $partnersAndDirector->country = $business_partners_detail['country'];
+
+            if ($business_partners_detail['upload_id']){
+                $path = FunctionHelpers::uploadAnything(
+                    $business_partners_detail['upload_id'], 
+                    $business_partners_detail['full_name'], 
+                    'assets/files/'.$businessRegistration->identifier .'/partners/upload_id/', 
+                    $partnersAndDirector->upload_id
+                );
+                $oldFilename = $partnersAndDirector->upload_id;
+                // add the new photo
+                $partnersAndDirector->upload_id = $path;
+                // delete the old photo
+                Storage::delete($oldFilename);
+            }
+
+            if ($business_partners_detail['signature']){
+                $path = FunctionHelpers::uploadAnything(
+                    $business_partners_detail['signature'],
+                    $business_partners_detail['full_name'], 
+                    'assets/files/'.$businessRegistration->identifier .'/partners/signature/', 
+                    $partnersAndDirector->signature
+                );
+                $oldFilename = $partnersAndDirector->signature;
+                // add the new photo
+                $partnersAndDirector->signature = $path;
+                // delete the old photo
+                Storage::delete($oldFilename);
+            }
+            $businessRegistration->partnersAndDirectors()->save($partnersAndDirector); 
+        }
+
+        return redirect()->route('business.show', $businessRegistration->identifier);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //

@@ -174,6 +174,16 @@
 						<label for="input-13">Passport Image</label>
 						<input type="file" name="passport"  class="form-control form-control-rounded"/>
 					</div> -->
+
+					<div class="col-md-4">
+						<label for="input-13">Upload Image</label><br>
+						<img src="{{URL::to($partner->upload_id)}}" alt="{{$partner->full_name}}" style="height:60%; width:40%">
+					</div>
+
+					<div class="col-md-4">
+						<label for="input-13">Signature Image</label><br>
+						<img src="{{URL::to($partner->signature)}}" alt="{{$partner->full_name}}" style="height:60%; width:40%">
+					</div>
 				</div>
 				@endforeach
 
@@ -251,6 +261,16 @@
 						<label for="input-13">Passport Image</label>
 						<input type="file" name="passport"  class="form-control form-control-rounded"/>
 					</div> -->
+
+					<div class="col-md-4">
+						<label for="input-13">Upload Image</label><br>
+						<img src="{{URL::to($agent->upload_id)}}" alt="{{$agent->full_name}}" style="height:60%; width:40%">
+					</div>
+
+					<div class="col-md-4">
+						<label for="input-13">Signature Image</label><br>
+						<img src="{{URL::to($agent->signature)}}" alt="{{$agent->full_name}}" style="height:60%; width:40%">
+					</div>
 				</div>
 				@endforeach
 
