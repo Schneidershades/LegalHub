@@ -22,9 +22,9 @@ class CreateRegistrationTransactionsTable extends Migration
             $table->decimal('amount', 40, 2)->default(0);
             $table->text('issues')->nullable();
             $table->text('error')->nullable();
-            $table->string('approval')->default('Pending');
-            $table->string('execution')->nullable('Pending');
-            $table->string('status')->default('Pending');
+            $table->string('approval')->default('pending');
+            $table->string('execution')->nullable('pending');
+            $table->string('status')->default('pending');
             $table->softDeletes();
             $table->timestamps();
         });

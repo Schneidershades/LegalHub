@@ -15,19 +15,19 @@ class SliderTableSeeder extends Seeder
         Slider::Create([
         	'title'          	 			=> 'Welcome to LegalHub',
         	'description'          	 		=> 'Enhancing Customer Relationships via Technology Solutions',
-        	'image'          				=> 'assets-visitors/images/hero-right1.jpg',
+        	'image'          				=> 'assets-visitors/images/hero-1.jpg',
         ]);
 
         Slider::Create([
         	'title'          	 			=> 'Welcome to LegalHub',
         	'description'          	 		=> 'We help you reach the top and stay on top',
-        	'image'          				=> 'assets-visitors/images/hero-right2.jpg',
+        	'image'          				=> 'assets-visitors/images/hero-2.jpg',
         ]);
 
         Slider::Create([
             'title'                         => 'Welcome to LegalHub',
             'description'                   => 'We help you reach the top and stay on top',
-            'image'                         => 'assets-visitors/images/hero-right3.jpg',
+            'image'                         => 'assets-visitors/images/hero-3.jpg',
         ]);
     }
 }

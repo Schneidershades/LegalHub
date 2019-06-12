@@ -30,10 +30,10 @@ class HomeController extends Controller
 
     public function activities()
     {
-        // $transactions = RegistrationTransaction::where('user_id', Auth::id())->get();
+        $transactions = RegistrationTransaction::where('user_id', Auth::id())->get();
 
         
-        // return view('backend.activity')
-        //     ->with('transactions', $transactions);
+        return view('backend.activity')
+            ->with('transactions', $transactions);
     }
 }

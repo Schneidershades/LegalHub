@@ -23,10 +23,7 @@
 <div class="row">
   <div class="col-lg-12">
     <div class="card">
-      <div class="card-header"><i class="fa fa-table"></i> Service transactions
-        <!-- <span class=""><button type="submit" class="btn btn-link bg-success text-info shadow px-5"><i class="icon-lock"></i> Register</button></span> -->
-      </div>
-
+      <div class="card-header"><i class="fa fa-table"></i> Service transactions</div>
       <div class="card-body">
         <div class="table-responsive">
           <table id="example" class="table table-bordered">

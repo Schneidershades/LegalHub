@@ -41,8 +41,7 @@ Route::group(['prefix' => '/user', 'middleware' => ['auth:web']],  function(){
 
 
 	Route::resource('profile', 'Users\ProfileController');
-	Route::get('profile/delete/{id}', 'Users\ProfileController@destroy')->name('ngo.delete');
-	Route::post('profile/update/{id}', 'Users\ProfileController@update')->name('ngo.update');
+	Route::post('profile/update/{id}', 'Users\ProfileController@update')->name('profile.update');
 
 	// Route::post('/signature', 'Users\BusinessRegistrationController@postSignature')->name('user.upload.signature');
 	// Route::post('/passport', 'Users\BusinessRegistrationController@postPassport')->name('user.upload.passport');

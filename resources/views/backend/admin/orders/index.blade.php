@@ -56,32 +56,7 @@
                 <td><span class="badge badge-warning m-1">{{$transaction->status}}</span></td>
                 <td><span class="badge badge-warning m-1">{{$transaction->execution}}</span></td>
                 <td>{{$transaction->updated_at}}</td>
-                <td>
-                  @if($transaction->status == 'pending')
-                     <!-- <form action="{{route('pay')}}" method="post">
-                        @csrf
-                        <input id="amount" type="hidden" name="amount" value="{{ $transaction->amount * 100 }}">
-                        <input type="hidden" name="email" value="{{Auth::user()->email}}">
-                        <input type="hidden" name="transaction_ref" value="{{$transaction->identifier}}">
-                        <input type="hidden" name="metadata" value="{{ json_encode($array = ['transaction_id' => $transaction->identifier,]) }}">
-                        <button class="btn btn-success btn-round waves-effect waves-light m-1"> <i aria-hidden="true" class="fa fa-money"></i></button>
-                    </form> -->
-
-                    <form method="POST" action="{{ route('pay') }}" id="paymentForm">
-                        @csrf
-                        <input type="hidden" name="amount" value="{{$transaction->amount }}" /> <!-- Replace the value with your transaction amount -->
-                        <input type="hidden" name="payment_method" value="both" /> <!-- Can be card, account, both -->
-                        <input type="hidden" name="description" value="Beats by Dre. 2017" /> <!-- Replace the value with your transaction description -->
-                        <input type="hidden" name="country" value="NG" /> <!-- Replace the value with your transaction country -->
-                        <input type="hidden" name="currency" value="NGN" /> <!-- Replace the value with your transaction currency -->
-                        <input type="hidden" name="email" value="{{Auth::user()->email}}" /> <!-- Replace the value with your customer email -->
-                        <input type="hidden" name="firstname" value="{{Auth::user()->email}}" /> <!-- Replace the value with your customer firstname -->
-                        <input type="hidden" name="lastname" value="{{Auth::user()->email}}" /> <!-- Replace the value with your customer lastname -->
-                        <input type="hidden" name="phonenumber" value="090123456789" /> <!-- Replace the value with your customer phonenumber -->
-                        <input type="hidden" name="ref" value="{{$transaction->identifier}}" /> <!-- Ucomment and  Replace the value with your transaction reference. It must be unique per transaction. You can delete this line if you want one to be generated for you. --> 
-                        <button class="btn btn-success btn-round waves-effect waves-light m-1"> <i aria-hidden="true" class="fa fa-money"></i></button>
-                    </form>   
-                  @endif
+                <td>           
 
                   @if($transaction->transactionable_type == "Business")
                   <a href="{{route('business.edit', $transaction->identifier)}}" class="btn btn-dark btn-round waves-effect waves-light m-1"><i aria-hidden="true" class="fa fa-edit"></i></a>

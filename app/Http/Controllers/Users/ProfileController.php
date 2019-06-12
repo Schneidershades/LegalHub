@@ -4,45 +4,43 @@ namespace App\Http\Controllers\Users;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 
 class ProfileController extends Controller
 {
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        $user = User::find(auth()->user()->id)->first();
+        $user = User::where('identifier', $id)->first();
         return view('backend.users.profile.show')
             ->with('user', $user);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        $user = User::find(auth()->user()->id)->first();
-        return view('backend.users.profile.show')
+        $user = User::where('identifier', $id)->first();
+        return view('backend.users.profile.edit')
             ->with('user', $user);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::where('identifier', $id)->first();
+        $user->name = $request->name;
+        $user->phone = $request->phone;
+        $user->address = $request->address;
+        if ($request->image){
+            $path = FunctionHelpers::uploadAnything(
+                auth()->user()->name, 
+                auth()->name()->identifier, 
+                'assets/files/users/', 
+                auth()->user()->name
+            );
+            $oldFilename = $user->image;
+            // add the new photo
+            $user->image = $path;
+            // delete the old photo
+            Storage::delete($oldFilename);
+        }
+        $user->save();
     }
 }

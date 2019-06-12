@@ -13,6 +13,15 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function($user){
+            $user->identifier = 'user-code'.mt_rand(12332323,92342322);
+        });
+    } 
+
     /**
      * The attributes that are mass assignable.
      *

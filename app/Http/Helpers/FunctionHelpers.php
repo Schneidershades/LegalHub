@@ -51,11 +51,15 @@ class FunctionHelpers {
         $checkIfThereIsDiscount = UserSpecialDiscount::where('user_discount_id', auth()->user()->id)->where('item_id', $serviceAmount->id)->first();
 
         if($checkIfThereIsDiscount == NULL){
+
         	// check if there is a discount from roles between users/admin/lawyers
         	$checkIfThereIsDiscount = RoleDiscount::where('role_id', auth()->user()->role_id)->where('item_id', $registrationAmount->id)->first();
-            $percentage_decimal = $checkIfThereIsDiscount->percentage / 100;
-            $deductable = $percentage_decimal * $amountToPay;
-            $amount = $amountToPay - $deductable;
+
+            if($checkIfThereIsDiscount != NULL){
+                $percentage_decimal = $checkIfThereIsDiscount->percentage / 100;
+                $deductable = $percentage_decimal * $amountToPay;
+                $amount = $amountToPay - $deductable;
+            }
         }
 
         if($checkIfThereIsDiscount != NULL && $checkIfThereIsDiscount->flexible == 'no'){
@@ -80,16 +84,13 @@ class FunctionHelpers {
     public static function uploadAnything($file, $name, $pathDirectory, $saveDatabaseAttribute){
     	$image = $file;
         $filename = $name . '.' . $image->getClientOriginalExtension();
-
         $directory = $pathDirectory;
         $path = $directory . $filename;
-
         if(!File::exists($directory)) {
             // path does not exist
             File::makeDirectory($directory, $mode = 0777, true, true);
         }
         Image::make($image)->resize(400, 400)->save($path);
-
         return $path;
     }
 

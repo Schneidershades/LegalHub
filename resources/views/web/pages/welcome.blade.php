@@ -95,7 +95,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <!-- Title -->
-            <h2 class="title">We Love To Provide<br>These Services</h2>
+            <h2 class="title">We Provide<br>These Services</h2>
         </div>
 
         <div class="row">
@@ -147,8 +147,8 @@
                 <div class="title-block pt-90">
                     <!-- Inner Items -->
                     <div class="inner-items">
-                        <h2>We Will Support your <br> Legal Businesses To Your Statisfaction</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nisi pariatur rerum error asperiores doloribus illo nam quibusdam?</p>
+                        <h2>We Will Support your <br> Legal Businesses To Your Satisfaction</h2>
+                        <p>{{$setting->about_description}}</p>
                         
                         <!-- Button Wrapper -->
                         <div class="btn-wrapper">

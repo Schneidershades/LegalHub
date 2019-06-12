@@ -13,12 +13,12 @@ class SettingTableSeeder extends Seeder
     public function run()
     {
         Setting::Create([
-        	'phone_number_1'          	 => 1,
-        	'phone_number_2'          	 => 1,
-        	'email_1'          			 => 1,
-        	'email_2'           		 => 1,
-        	'address_1'           		 => 'USA, New York Mondella street 34, buld 8',
-        	'address_2'           		 => 'USA, New York Mondella street 34, buld 8',
+        	'phone_number_1'          	 => '+234(8)-028-974-982',
+        	'phone_number_2'          	 => '+234(8)-028-974-982',
+        	'email_1'          			 => 'legalhub.tech@gmail.com',
+        	'email_2'           		 => 'info@legalhub.com.ng',
+        	'address_1'           		 => 'No 38 Nasarawa avenue, War college, 3rd avenue, Gwarinpa.',
+        	'address_2'           		 => 'No 38 Nasarawa avenue, War college, 3rd avenue, Gwarinpa.',
         	'city'           			 => 'Abuja',
         	'country'           		 => 'Nigeria',
         	'website'           		 => 'http://www.legalhub.com',
@@ -31,12 +31,10 @@ class SettingTableSeeder extends Seeder
         	'googleplus'				 => 'no',
         	'instagram'					 => 'no',
         	'home_description'			 => '<p>
-                                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae inventore error earum consequatur, 
-                                                aperiam voluptatem voluptate nisi commodi, amet corrupti, est cumque ex assumenda saepe dicta quam animi reprehenderit impedit?<br>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit possimus labore ad! Illo tempora, 
-                                                nam blanditiis necessitatibus autem dolor? Ea magnam quia officiis necessitatibus aut numquam dignissimos sequi provident unde!
+                                                Legal hub is legal firm with the speciality on various areas of law. The Firm is undoubtedly one of the top law firms in Nigeria. Our solicitors in Nigeria are highly experienced in the various aspects of law and strive to always secure good deals for clients both in and out of court. We offer quality and inexpensive legal services in Nigeria to both individuals and companies. <br>Legal hub offers various types of legal services. Some of our areas of legal practice and services include the followings
+
                                             </p>',
-        	'about_description'			 => 'Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation',
+        	'about_description'			 => 'Finally legal hub offers legal services throughout Nigeria. The law firm also collaborates with other lawyers in various states of Nigeria to offer seamless services to various clients all over the country.',
         	'about_image'				 => 'assets-visitors/images/about.png',
         ]);
 

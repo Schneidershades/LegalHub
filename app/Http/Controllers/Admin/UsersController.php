@@ -18,7 +18,7 @@ class UsersController extends Controller
     public function index()
     {
         return view('backend.admin.users.index')
-            ->with('users', User::all());
+            ->with('users', User::where('id', "!=",auth()->user()->id)->get());
     }
 
     /**
