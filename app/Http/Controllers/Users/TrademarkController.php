@@ -37,11 +37,13 @@ class TrademarkController extends Controller
         $trademarkRegistration->type = $request->trademark_type;
 
         if ($request->hasFile('file')){
+
+            // dd($request->file);
                 // add the new photo
             $path = FunctionHelpers::uploadAnything(
                 $request->file, 
-                $request->file, 
-                'assets/files/copyright_file/', 
+                'Trade'.mt_rand(0000,29399), 
+                'assets/files/trademark/', 
                 $trademarkRegistration->type
             );
 

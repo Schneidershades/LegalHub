@@ -117,7 +117,7 @@ class NgoRegistrationController extends Controller
                 $path = FunctionHelpers::uploadAnything(
                     $ngo['constitution_file'], 
                     $ngo['full_name'], 
-                    'assets/files/'.$patentRegistration->identifier .'/constitution_file/', 
+                    'assets/files/'.$ngoRegistration->identifier .'/constitution_file/', 
                     $trustee->upload_id
                 );
                 $oldFilename = $trustee->constitution_file;
@@ -225,7 +225,7 @@ class NgoRegistrationController extends Controller
                 $path = FunctionHelpers::uploadAnything(
                     $ngo['constitution_file'], 
                     $ngo['full_name'], 
-                    'assets/files/'.$patentRegistration->identifier .'/constitution_file/', 
+                    'assets/files/'.$ngoRegistration->identifier .'/constitution_file/', 
                     $trustee->upload_id
                 );
                 $oldFilename = $trustee->constitution_file;

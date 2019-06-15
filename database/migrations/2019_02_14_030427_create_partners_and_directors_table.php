@@ -33,6 +33,7 @@ class CreatePartnersAndDirectorsTable extends Migration
             $table->text('description')->nullable();
             $table->text('content_file')->nullable();
             $table->text('upload_id')->nullable();
+            $table->text('constitution_file')->nullable();
             $table->text('signature')->nullable();
             $table->text('issues')->nullable();
             $table->text('error')->nullable();

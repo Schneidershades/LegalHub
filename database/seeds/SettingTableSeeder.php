@@ -35,7 +35,7 @@ class SettingTableSeeder extends Seeder
 
                                             </p>',
         	'about_description'			 => 'Finally legal hub offers legal services throughout Nigeria. The law firm also collaborates with other lawyers in various states of Nigeria to offer seamless services to various clients all over the country.',
-        	'about_image'				 => 'assets-visitors/images/about.png',
+        	'about_image'				 => 'assets-visitors/images/about-home.png',
         ]);
 
     }

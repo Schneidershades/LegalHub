@@ -153,7 +153,10 @@
 						<label for="input-13">Signature Image</label><br>
 						<img src="{{URL::to($partner->signature)}}" alt="{{$partner->full_name}}" style="height:60%; width:40%">
 					</div>
-					
+					<div class="col-md-4">
+						<label for="input-13">Signature Image</label><br>
+						<img src="{{URL::to($partner->signature)}}" alt="{{$partner->constitution_file}}" style="height:60%; width:40%">
+					</div>
 					<!-- <div class="col-md-4">			
 						<label for="input-13">ID Image</label>
 						<input type="file" name="id_image" class="form-control form-control-rounded"/>

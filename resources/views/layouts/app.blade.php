@@ -23,7 +23,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}"><img src="{{URL::to('assets-visitors/images/logo-full.png')}}" height="50px" width="250px" alt="Logo" class="img-logo"></a>
+                <a class="navbar-brand" href="{{ url('/') }}"><img src="{{URL::to('assets-visitors/images/lh2.svg')}}" height="50px" width="50px" alt="Logo" class="img-logo">LegalHub</a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

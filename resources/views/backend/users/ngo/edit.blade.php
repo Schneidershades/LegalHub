@@ -97,6 +97,7 @@
 									<div class="card-title"><i class="fa fa-address-book-o"></i> NEW TRUSTEE</div><br>
 								</div>
 								<!-- <input type="text" class="form-control form-control-rounded " id="input-9" name="" value=""/> -->
+								<input type="hidden" name="first_name" class="form-control form-control-rounded" value="{{$partner->id}}" required/>
 								<div class="col-md-3">
 									<label for="input-13">Full Name</label>
 									<input type="text" name="first_name" class="form-control form-control-rounded" value="{{$partner->full_name}}" required/>
@@ -168,18 +169,21 @@
 								</div>	
 								
 								<div class="col-md-4">			
-									<label for="input-13">Upload ID</label>
+									<label for="input-13">Upload ID</label><br>
+									<img src="{{URL::to($partner->upload_id)}}" alt="{{$partner->full_name}}" style="height:60%; width:40%">
 									<input type="file" name="upload_id" class="form-control form-control-rounded"/>
 								</div>
 
 								<div class="col-md-4">
-									<label for="input-13">Signature</label>
+									<label for="input-13">Signature</label><br>
+									<img src="{{URL::to($partner->signature)}}" alt="{{$partner->full_name}}" style="height:60%; width:40%">
 									<input type="file" name="signature" class="form-control form-control-rounded"/>
 								</div>
 								
 
 						        <div class="col-md-4">
-						            <label for="input-13">Copy of constitution</label>
+						            <label for="input-13">Copy of constitution</label><br>
+									<img src="{{URL::to($partner->constitution_file)}}" alt="{{$partner->full_name}}" style="height:60%; width:40%">
 						            <input type="file" name="constitution_file" id="dropzone" class="form-control form-control-rounded" />
 						        </div>
 

@@ -13,23 +13,9 @@ class PartnerTableSeeder extends Seeder
     public function run()
     {
         Partner::Create([
-        	'name'          	 			=> 'Welcome to LegalHub',
-        	'image'          				=> 'assets-visitors/images/themeforest.png',
-        ]);
-
-        Partner::Create([
-        	'name'          	 			=> 'Welcome to LegalHub',
-        	'image'          				=> 'assets-visitors/images/codecanyon.png',
-        ]);
-
-        Partner::Create([
-        	'name'          	 			=> 'Welcome to LegalHub',
-        	'image'          				=> 'assets-visitors/images/audiojungle.png',
-        ]);
-
-        Partner::Create([
-        	'name'          	 			=> 'Welcome to LegalHub',
-        	'image'          				=> 'assets-visitors/images/graphicriver.png',
+        	'name'          	 			=> 'SIT Consulting',
+        	'image'          				=> 'assets-visitors/images/sit.png',
+            'url'                           => 'https://www.sitconsulting.org',
         ]);
     }
 }

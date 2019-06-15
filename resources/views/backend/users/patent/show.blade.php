@@ -249,8 +249,6 @@
 
 		$(document).ready(function () {
 			'use strict';
-
-		// var myDropzone = new Dropzone("dropzone", { url: "{{ route('user.upload.signature')}}"});
 		$('.repeater, .repeatInner').repeater({
 			isFirstItemUndeletable: true,
 			defaultValues: {
