@@ -225,4 +225,41 @@ class BusinessRegistrationController extends Controller
         return 'good';
     }
 
+
+    // function crudPartition($oldData, $newData)
+    // {
+    //     // ids
+    //     $oldIds = array_pluck($oldData, 'id');
+    //     $newIds = array_filter(array_pluck($newData, 'id'), 'is_numeric');
+
+    //     // groups
+    //     $delete = collect($oldData)
+    //         ->filter(function ($model) use ($newIds) {
+    //             return !in_array($model->id, $newIds);
+    //         });
+
+    //     $update = collect($newData)
+    //         ->filter(function ($model) use ($oldIds) {
+    //             return property_exists($model, 'id') && in_array($model->id, $oldIds);
+    //         });
+
+    //     $create = collect($newData)
+    //         ->filter(function ($model) {
+    //             return !property_exists($model, 'id');
+    //         });
+
+    //     // return
+    //     return compact('delete', 'update', 'create');
+    // }
+
+    // // data
+    // $oldData = json_decode('[{"id":1,"name":"one"},{"id":2,"name":"two"}]');
+    // $newData = json_decode('[{"id":2,"name":"TWO"},{"name":"three"}]');
+
+    // // results
+    // $results = crudPartition($oldData, $newData);
+    // print_r($results);
+
+    // // do something
+    // $results['create']->each( ... );
 }
