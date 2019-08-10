@@ -501,24 +501,24 @@
                         <div class="single-contact-details text-center">
                             <span class="lnr lnr-phone-handset"></span>
                             <h4>phone</h4>
-                            <p class="text-muted">{{$web->phone_number_1}}</p>
-                            <p class="text-muted">{{$web->phone_number_2}}</p>
+                            <p class="text-muted">{{$setting->phone_number_1}}</p>
+                            <p class="text-muted">{{$setting->phone_number_2}}</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-12">
                         <div class="single-contact-details text-center">
                             <span class="lnr lnr-envelope"></span>
                             <h4>E-mail</h4>
-                            <p class="text-muted">{{$web->email_1}}</p>
-                            <p class="text-muted">{{$web->email_2}}</p>
+                            <p class="text-muted">{{$setting->email_1}}</p>
+                            <p class="text-muted">{{$setting->email_2}}</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-12">
                         <div class="single-contact-details text-center">
                             <span class="lnr lnr-map-marker"></span>
                             <h4>Address</h4>
-                            <p class="text-muted">{{$web->address_1}}</p>
-                            <p class="text-muted">{{$web->address_2}}</p>
+                            <p class="text-muted">{{$setting->address_1}}</p>
+                            <p class="text-muted">{{$setting->address_2}}</p>
                         </div>
                     </div>
                 </div>
