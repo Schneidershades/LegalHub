@@ -20,7 +20,7 @@ class FaqsController extends Controller
      */
     public function index()
     {
-        return view('backend.admin.faq.index')
+        return view('dashboard.admin.faq.index')
             ->with('faqs', Faq::all());
     }
 

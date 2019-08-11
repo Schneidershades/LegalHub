@@ -39,7 +39,6 @@ Route::group(['prefix' => '/user', 'middleware' => ['auth:web']],  function(){
 	Route::get('ngo/delete/{id}', 'Users\NgoRegistrationController@destroy')->name('ngo.delete');
 	Route::post('ngo/update/{id}', 'Users\NgoRegistrationController@update')->name('ngo.update');
 
-
 	Route::resource('profile', 'Users\ProfileController');
 	Route::post('profile/update/{id}', 'Users\ProfileController@update')->name('profile.update');
 
@@ -64,6 +63,13 @@ Route::group(['prefix' => '/admin', 'middleware' => ['auth:web']],  function(){
 	Route::resource('/faq', 'Admin\FaqsController');
 	Route::get('/faq/delete/{id}', 'Admin\FaqsController@destroy')->name('faq.delete');
 	Route::post('/faq/update/{id}', 'Admin\FaqsController@update')->name('faq.update');
+
+	Route::resource('/subscribers', 'Admin\SubscribeController');
+	Route::get('/subscribers/delete/{id}', 'Admin\SubscribeController@destroy')->name('subscribers.delete');
+
+	Route::resource('/posts', 'Admin\PostController');
+	Route::get('/posts/delete/{id}', 'Admin\PostController@destroy')->name('posts.delete');
+	Route::post('/posts/update/{id}', 'Admin\PostController@update')->name('posts.update');
 
 	Route::resource('/count', 'Admin\CountController');
 	Route::get('/count/delete/{id}', 'Admin\CountController@destroy')->name('count.delete');
@@ -95,4 +101,7 @@ Route::group(['prefix' => '/admin', 'middleware' => ['auth:web']],  function(){
 
 	Route::resource('/payment', 'Admin\PaymentController');
 	Route::post('/payment/update/{id}', 'Admin\PaymentController@update')->name('payment.update');
+
+
+	Route::resource('/contacts', 'Admin\ContactController');
 });

@@ -23,7 +23,7 @@ class DiscountServiceController extends Controller
      */
     public function index()
     {
-        return view('backend.admin.discounts.index')
+        return view('dashboard.admin.discounts.index')
             ->with('users', User::all());
     }
 
@@ -34,7 +34,7 @@ class DiscountServiceController extends Controller
      */
     public function create()
     {
-        return view('backend.admin.discounts.create')
+        return view('dashboard.admin.discounts.create')
             ->with('items', Item::all())
             ->with('users', User::all());
     }
@@ -121,7 +121,7 @@ class DiscountServiceController extends Controller
         if($service == null){
             return redirect()->back();
         }
-        return view('backend.admin.discounts.edit')
+        return view('dashboard.admin.discounts.edit')
                 ->with('service', $service)
                 ->with('items', Item::all());
     }

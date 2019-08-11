@@ -11,14 +11,14 @@ class ProfileController extends Controller
     public function show($id)
     {
         $user = User::where('identifier', $id)->first();
-        return view('backend.users.profile.show')
+        return view('dashboard.users.profile.show')
             ->with('user', $user);
     }
 
     public function edit($id)
     {
         $user = User::where('identifier', $id)->first();
-        return view('backend.users.profile.edit')
+        return view('dashboard.users.profile.edit')
             ->with('user', $user);
     }
 

@@ -20,12 +20,12 @@ class CopyrightController extends Controller
 {
     public function index()
     {
-        return view('backend.users.copyright.index');
+        return view('dashboard.users.copyright.index');
     }
 
     public function create()
     {
-        return view('backend.users.copyright.create');
+        return view('dashboard.users.copyright.create');
     }
 
     public function store(Request $request)
@@ -95,7 +95,7 @@ class CopyrightController extends Controller
         if($copyright == null){
             return redirect()->back();
         }
-        return view('backend.users.copyright.show')
+        return view('dashboard.users.copyright.show')
                 ->with('copyright', $copyright);
     }
 
@@ -105,7 +105,7 @@ class CopyrightController extends Controller
         if($copyright == null){
             return redirect()->back();
         }
-        return view('backend.users.copyright.edit')
+        return view('dashboard.users.copyright.edit')
                 ->with('copyright', $copyright);
     }
 

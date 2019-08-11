@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('backend.home');
+        return view('dashboard.home');
     }
 
     public function activities()
@@ -33,7 +33,7 @@ class HomeController extends Controller
         $transactions = RegistrationTransaction::where('user_id', Auth::id())->get();
 
         
-        return view('backend.activity')
+        return view('dashboard.activity')
             ->with('transactions', $transactions);
     }
 }

@@ -44,7 +44,7 @@ class PatentController extends Controller
      */
     public function create()
     {
-        return view('backend.users.patent.create');
+        return view('dashboard.users.patent.create');
     }
 
     /**
@@ -168,7 +168,7 @@ class PatentController extends Controller
         if($patent == null){
             return redirect()->back();
         }
-        return view('backend.users.patent.show')
+        return view('dashboard.users.patent.show')
                 ->with('patent', $patent);
     }
 
@@ -184,7 +184,7 @@ class PatentController extends Controller
         if($patent == null){
             return redirect()->back();
         }
-        return view('backend.users.patent.edit')
+        return view('dashboard.users.patent.edit')
                 ->with('patent', $patent);
     }
 

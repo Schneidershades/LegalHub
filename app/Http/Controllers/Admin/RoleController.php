@@ -20,7 +20,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        return view('backend.admin.role.index')
+        return view('dashboard.admin.role.index')
             ->with('roles', Role::all());
     }
 
@@ -31,7 +31,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        return view('backend.admin.role.create');
+        return view('dashboard.admin.role.create');
     }
 
     public function store(Request $request)
@@ -56,7 +56,7 @@ class RoleController extends Controller
         if($role == null){
             return redirect()->back();
         }
-        return view('backend.admin.role.edit')
+        return view('dashboard.admin.role.edit')
             ->with('role', $role);
     }
 

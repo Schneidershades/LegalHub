@@ -27,7 +27,7 @@ class RegistrationItemController extends Controller
      */
     public function index()
     {
-        return view('backend.admin.services.index')
+        return view('dashboard.admin.services.index')
             ->with('items', RegistrationItem::all());
     }
 
@@ -38,7 +38,7 @@ class RegistrationItemController extends Controller
      */
     public function create()
     {
-        return view('backend.admin.services.create')
+        return view('dashboard.admin.services.create')
             ->with('items', Item::all());
     }
 
@@ -110,7 +110,7 @@ class RegistrationItemController extends Controller
         if($service == null){
             return redirect()->back();
         }
-        return view('backend.admin.services.edit')
+        return view('dashboard.admin.services.edit')
                 ->with('service', $service)
                 ->with('items', Item::all());
     }

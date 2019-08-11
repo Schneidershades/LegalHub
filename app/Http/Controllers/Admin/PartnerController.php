@@ -20,7 +20,7 @@ class PartnerController extends Controller
      */
     public function index()
     {
-        return view('backend.admin.partners.index')
+        return view('dashboard.admin.partners.index')
             ->with('sliders', Partner::all());
     }
 

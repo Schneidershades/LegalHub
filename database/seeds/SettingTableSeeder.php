@@ -24,12 +24,12 @@ class SettingTableSeeder extends Seeder
         	'website'           		 => 'http://www.legalhub.com',
         	'state'           			 => 'Faster than the shadows',
         	'motto'						 => 'We Are Comitted To Support Till You See The Success',
-        	'facebook'					 => 'no',
-        	'twitter'					 => 'no',
-        	'linkedin'					 => 'no',
-        	'pinterest'					 => 'no',
-        	'googleplus'				 => 'no',
-        	'instagram'					 => 'no',
+        	'facebook'					 => '#',
+        	'twitter'					 => '#',
+        	'linkedin'					 => '#',
+        	'pinterest'					 => '#',
+        	'googleplus'				 => '#',
+        	'instagram'					 => '#',
         	'home_description'			 => '<p>
                                                 Legal hub is legal firm with the speciality on various areas of law. The Firm is undoubtedly one of the top law firms in Nigeria. Our solicitors in Nigeria are highly experienced in the various aspects of law and strive to always secure good deals for clients both in and out of court. We offer quality and inexpensive legal services in Nigeria to both individuals and companies. <br>Legal hub offers various types of legal services. Some of our areas of legal practice and services include the followings
 

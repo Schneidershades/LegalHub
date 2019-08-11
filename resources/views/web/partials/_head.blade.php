@@ -1,37 +1,30 @@
+<!-- META -->
 <meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>LEGALHUB - @yield('title')</title>
-
-<!--=== Required Meta Tag ===-->
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="discrption" content="Okoma Business Consultancy HTML5 Template">
-<meta name="keyword" content="creative, business, agency, responsive, corporate, interior, minimal, modern, personal, portfolio, simple">
-<meta name="author" content="IdealWebGuru">
-
-<!--=== Favicon ===-->
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
-
-<!--===+++++ Required Plugins +++++===-->
-
-<!--=== Bootstrap ===-->
-<link rel="stylesheet" href="assets-visitors/css/bootstrap.min.css">
-<!--=== Animate CSS ===-->
-<link rel="stylesheet" href="assets-visitors/css/plugin/animate.min.css">
-<!--=== Flaticon ===-->
-<link rel="stylesheet" href="assets-visitors/fonts/flaticon/flaticon.css">
-<!--=== Themify icon ===-->
-<link rel="stylesheet" href="assets-visitors/fonts/themify/themify-icons.css">
-<!--=== Owl carousel ===-->
-<link rel="stylesheet" href="assets-visitors/css/plugin/owl.carousel.min.css">
-<!--=== Owl Theme carousel ===-->
-<link rel="stylesheet" href="assets-visitors/css/plugin/owl.theme.default.min.css">
-<!--=== Magnific Popup ===-->
-<link rel="stylesheet" href="assets-visitors/css/plugin/magnific-popup.css">
-<!--=== Main Css ===-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- PAGE TITLE -->
+<title>LegalHub &#8211;</title>
+<!-- FAVI ICON -->
+<link rel="icon" type="image/png" href="assets-visitors/images/favi.png" sizes="32x32">
+<!-- BOOTSTRAP CSS -->
+<link rel="stylesheet" href="assets-visitors/bootstrap/css/bootstrap.min.css">
+<!-- ALL GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Lato:300,400,700,900" rel="stylesheet">
+<!-- FONT AWESOME CSS -->
+<link rel="stylesheet" href="assets-visitors/fonts/linear-fonts.css">
+<link rel="stylesheet" href="assets-visitors/fonts/font-awesome.css">
+<!-- OWL CAROSEL CSS -->
+<link rel="stylesheet" href="assets-visitors/owlcarousel/css/owl.carousel.css">
+<link rel="stylesheet" href="assets-visitors/owlcarousel/css/owl.theme.css">
+<!-- LIGHTBOX CSS -->
+<link rel="stylesheet" href="assets-visitors/css/lightbox.min.css">
+<!-- MAGNIFIC CSS -->
+<link rel="stylesheet" href="assets-visitors/css/magnific-popup.css">
+<!-- ANIMATE CSS -->
+<link rel="stylesheet" href="assets-visitors/css/animate.min.css">
+<!-- MAIN STYLE CSS -->
 <link rel="stylesheet" href="assets-visitors/css/style.css">
-<!--=== Responsive Css ===-->
+<!-- RESPONSIVE CSS -->
 <link rel="stylesheet" href="assets-visitors/css/responsive.css">
-
-<script src="assets-visitors/js/vendor/modernizr-2.8.3.min.js"></script>
+<!-- DATE PICKER CSS -->
+<link rel="stylesheet" href="assets-visitors/css/datepicker.css">

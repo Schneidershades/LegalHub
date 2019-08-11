@@ -24,7 +24,7 @@ class RoleDiscountController extends Controller
     public function index()
     {
         $roleDiscounts = RoleDiscount::all();
-        return view('backend.admin.roleDiscounts.index')
+        return view('dashboard.admin.roleDiscounts.index')
                 ->with('discounts', $roleDiscounts);
     }
 
@@ -35,7 +35,7 @@ class RoleDiscountController extends Controller
      */
     public function create()
     {
-        return view('backend.admin.roleDiscounts.create')
+        return view('dashboard.admin.roleDiscounts.create')
                 ->with('items', Item::all())
                 ->with('roles', Role::all());
     }

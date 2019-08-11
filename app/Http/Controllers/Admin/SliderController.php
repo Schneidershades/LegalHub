@@ -21,7 +21,7 @@ class SliderController extends Controller
      */
     public function index()
     {
-        return view('backend.admin.slider.index')
+        return view('dashboard.admin.slider.index')
             ->with('sliders', Slider::all());
     }
 

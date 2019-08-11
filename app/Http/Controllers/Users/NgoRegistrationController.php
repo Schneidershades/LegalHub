@@ -32,7 +32,7 @@ class NgoRegistrationController extends Controller
 
     public function index()
     {
-        return view('backend.users.ngo.index');
+        return view('dashboard.users.ngo.index');
     }
 
     /**
@@ -42,7 +42,7 @@ class NgoRegistrationController extends Controller
      */
     public function create()
     {
-        return view('backend.users.ngo.create');
+        return view('dashboard.users.ngo.create');
     }
 
     /**
@@ -151,7 +151,7 @@ class NgoRegistrationController extends Controller
         if($ngo == null){
             return redirect()->back();
         }
-        return view('backend.users.ngo.show')
+        return view('dashboard.users.ngo.show')
                 ->with('ngo', $ngo);
     }
 
@@ -161,7 +161,7 @@ class NgoRegistrationController extends Controller
         if($ngo == null){
             return redirect()->back();
         }
-        return view('backend.users.ngo.edit')
+        return view('dashboard.users.ngo.edit')
                 ->with('ngo', $ngo);
     }
 

@@ -29,12 +29,12 @@ class CompanyRegistrationController extends Controller
 
     public function index()
     {
-        return view('backend.users.company.index');
+        return view('dashboard.users.company.index');
     }
 
     public function create()
     {
-        return view('backend.users.company.create');
+        return view('dashboard.users.company.create');
     }
 
     public function store(Request $request)
@@ -237,7 +237,7 @@ class CompanyRegistrationController extends Controller
         if($company == null){
             return redirect()->back();
         }
-        return view('backend.users.company.show')
+        return view('dashboard.users.company.show')
                 ->with('company', $company);
     }
 
@@ -247,7 +247,7 @@ class CompanyRegistrationController extends Controller
         if($company == null){
             return redirect()->back();
         }
-        return view('backend.users.company.edit')
+        return view('dashboard.users.company.edit')
                 ->with('company', $company);
     }
 

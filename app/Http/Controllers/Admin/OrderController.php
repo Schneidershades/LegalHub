@@ -17,7 +17,7 @@ class OrderController extends Controller
     public function index()
     {
         $transactions = RegistrationTransaction::all();        
-        return view('backend.admin.orders.index')
+        return view('dashboard.admin.orders.index')
             ->with('transactions', $transactions);
     }
 

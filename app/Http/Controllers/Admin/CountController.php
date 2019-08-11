@@ -20,7 +20,7 @@ class CountController extends Controller
      */
     public function index()
     {
-        return view('backend.admin.count.index')
+        return view('dashboard.admin.count.index')
             ->with('counts', Count::all());
     }
 

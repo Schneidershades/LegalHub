@@ -17,7 +17,7 @@ class SettingController extends Controller
     
     public function index()
 	{
-		return view('backend.admin.settings.settings')->with('settings', Setting::first());
+		return view('dashboard.admin.settings.settings')->with('settings', Setting::first());
 	}
 
     public function update(Request $request)

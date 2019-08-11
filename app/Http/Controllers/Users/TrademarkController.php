@@ -27,7 +27,7 @@ class TrademarkController extends Controller
 
     public function create()
     {
-        return view('backend.users.trademark.create');
+        return view('dashboard.users.trademark.create');
     }
 
     public function store(Request $request)
@@ -185,7 +185,7 @@ class TrademarkController extends Controller
         if($trademark == null){
             return redirect()->back();
         }
-        return view('backend.users.trademark.show')
+        return view('dashboard.users.trademark.show')
                 ->with('trademark', $trademark);
     }
     public function edit($id)
@@ -194,7 +194,7 @@ class TrademarkController extends Controller
         if($trademark == null){
             return redirect()->back();
         }
-        return view('backend.users.trademark.edit')
+        return view('dashboard.users.trademark.edit')
                 ->with('trademark', $trademark);
     }
 

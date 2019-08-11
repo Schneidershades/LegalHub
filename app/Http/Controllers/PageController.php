@@ -12,6 +12,7 @@ use App\Models\Slider;
 use App\Models\Testimonial;
 use App\Models\Partner;
 use App\Models\Count;
+use App\Models\Post;
 use App\Models\Faq;
 use App\Models\Contact;
 
@@ -21,6 +22,7 @@ class PageController extends Controller
     {
     	return view('web.pages.welcome')
             ->with('services', RegistrationItem::all())
+            ->with('posts', Post::all())
     		->with('sliders', Slider::all())
             ->with('whys', Why::all())
             ->with('testimonials', Testimonial::all())
