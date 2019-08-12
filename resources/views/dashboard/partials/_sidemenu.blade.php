@@ -10,14 +10,11 @@
    <ul class="sidebar-menu do-nicescrol in">
       @if(auth()->user()->role_id == 1)
       <li class="sidebar-header">ADMIN NAVIGATION</li>
-      <!-- <li>
-        <a href="#" class="waves-effect">
-          <i class="icon-home"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+      <li>
+        <a href="{{route('home')}}" class="waves-effect">
+          <i class="icon-home"></i> <span>Dashboard</span></i>
         </a>
-        <ul class="sidebar-submenu">
-          <li><a href="{{route('home')}}"><i class="fa fa-circle-o"></i> All Services </a></li>          
-        </ul>
-      </li> -->
+      </li>
       
       <li>
         <a href="#" class="waves-effect">
@@ -28,7 +25,7 @@
           <!-- <li><a href="{{route('role.index')}}"><i class="fa fa-circle-o"></i> All Roles </a></li>
           <li><a href="{{route('roleDiscount.index')}}"><i class="fa fa-circle-o"></i> Role Discount </a></li>
           <li><a href="{{route('discount.index')}}"><i class="fa fa-circle-o"></i> Users Discounts </a></li>  -->
-          <li><a href="{{route('order.index')}}"><i class="fa fa-circle-o"></i> All Service Orders </a></li>
+          <li><a href="{{route('requests.index')}}"><i class="fa fa-circle-o"></i> All Service Orders </a></li>
           <li><a href="{{route('subscribers.index')}}"><i class="fa fa-circle-o"></i> News Subscriptions </a></li> 
           <li><a href="{{route('contacts.index')}}"><i class="fa fa-circle-o"></i>Contacts</a></li>        
         </ul>
@@ -45,6 +42,7 @@
           <li><a href="{{route('slider.index')}}"><i class="fa fa-circle-o"></i> Slider Content </a></li>
           <li><a href="{{route('partner.index')}}"><i class="fa fa-circle-o"></i> Partner Content </a></li>
           <li><a href="{{route('posts.index')}}"><i class="fa fa-circle-o"></i> Post Content </a></li>
+          <!-- <li><a href="{{route('setting')}}"><i class="fa fa-circle-o"></i> Web Details </a></li> -->
         </ul>
       </li>
 

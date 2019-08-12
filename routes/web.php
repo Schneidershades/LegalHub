@@ -4,11 +4,28 @@ Auth::routes();
 
 Route::get('/', 'PageController@index');
 Route::get('/page/{page}', 'PageController@page');
+
+Route::post('/user/store-request', 'PageController@storeServiceRequest')->name('store-service-request');
+Route::post('/user/subscription', 'PageController@subscribe')->name('subscribe');
+
+Route::get('/news', 'PageController@news')->name('news');
+Route::get('/news/details/{slug}', 'PageController@newsDetails')->name('news-details');
+
 Route::post('/contact', ['uses' => 'PageController@storeContact', 'as' => 'store.contact']);
+
+
+Route::post('comments/{post_id}', [
+	'uses' => 'PageController@storeComment', 
+	'as' => 'comment.store'
+]);
 
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => '/user', 'middleware' => ['auth:web']],  function(){
+
+
+	Route::get('/settings',['uses' => 'Admin\SettingController@index', 'as' => 'setting']);
+	Route::post('/setting/update',['uses' => 'Admin\SettingController@update', 'as' => 'setting.update']);
 
 	Route::post('/pay', 'Users\RaveController@initialize')->name('pay');
 	Route::post('/rave/callback', 'Users\RaveController@callback')->name('callback');
@@ -98,6 +115,10 @@ Route::group(['prefix' => '/admin', 'middleware' => ['auth:web']],  function(){
 	Route::resource('/order', 'Admin\OrderController');
 	Route::get('/order/delete/{id}', 'Admin\OrderController@destroy')->name('order.delete');
 	Route::post('/order/update/{id}', 'Admin\OrderController@update')->name('order.update');
+
+
+	Route::resource('/requests', 'Admin\ServiceRequestController');
+	Route::get('/requests/delete/{id}', 'Admin\ServiceRequestController@destroy')->name('requests.delete');
 
 	Route::resource('/payment', 'Admin\PaymentController');
 	Route::post('/payment/update/{id}', 'Admin\PaymentController@update')->name('payment.update');

@@ -13,6 +13,8 @@ class SettingTableSeeder extends Seeder
     public function run()
     {
         Setting::Create([
+            'name'                       => 'LegalHub',
+            'logo'                       => 'assets-visitors/images/lh2.svg',
         	'phone_number_1'          	 => '+234(8)-028-974-982',
         	'phone_number_2'          	 => '+234(8)-028-974-982',
         	'email_1'          			 => 'legalhub.tech@gmail.com',
@@ -36,6 +38,8 @@ class SettingTableSeeder extends Seeder
                                             </p>',
         	'about_description'			 => 'Finally legal hub offers legal services throughout Nigeria. The law firm also collaborates with other lawyers in various states of Nigeria to offer seamless services to various clients all over the country.',
         	'about_image'				 => 'assets-visitors/images/about-home.png',
+            'meta_description'            => 'LegalHub',
+            'meta_keywords'                => 'LegalHub',
         ]);
 
     }

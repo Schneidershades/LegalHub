@@ -1318,7 +1318,7 @@ ul.work li.active {
     color: #fff;
 }
 
-.our-news-letter input[type='text'] {
+.our-news-letter input[type='text'],.our-news-letter input[type='email']{
     display: block;
     width: 35%;
     text-align: center;

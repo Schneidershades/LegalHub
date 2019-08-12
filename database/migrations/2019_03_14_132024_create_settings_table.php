@@ -15,6 +15,8 @@ class CreateSettingsTable extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name')->nullable();
+            $table->string('logo')->nullable();
             $table->string('phone_number_1')->nullable();
             $table->string('phone_number_2')->nullable();
             $table->string('email_1')->nullable();
@@ -35,6 +37,8 @@ class CreateSettingsTable extends Migration
             $table->text('home_description')->nullable();
             $table->text('about_description')->nullable();
             $table->string('about_image')->nullable();
+            $table->text('meta_description')->nullable();
+            $table->text('meta_keywords')->nullable();
             $table->timestamps();
         });
     }

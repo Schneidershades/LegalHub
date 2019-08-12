@@ -22,33 +22,30 @@ class SettingController extends Controller
 
     public function update(Request $request)
     {
-    	$this->validate(request(), [
-    		'site_name' => 'required',
-    	]);
-
     	$settings = Setting::first();
 
-    	$settings->phone_number_1 = request()->phone_number_1;
-    	$settings->phone_number_2 = request()->phone_number_2;
-    	$settings->email_1 = request()->email_1;
-    	$settings->email_2 = request()->email_2;
-    	$settings->address_1 = request()->address_1;
+        $settings->name = request()->name;
+        $settings->phone_number_1 = request()->phone_number_1;
+        $settings->phone_number_2 = request()->phone_number_2;
+        $settings->email_1 = request()->email_1;
+        $settings->email_2 = request()->email_2;
+        $settings->address_1 = request()->address_1;
         $settings->address_2 = request()->address_2;
         $settings->city = request()->city;
         $settings->state = request()->state;
         $settings->country = request()->country;
         $settings->website = request()->website;
-    	$settings->motto = request()->motto;
+        $settings->motto = request()->motto;
         $settings->facebook = request()->facebook;
         $settings->twitter = request()->twitter;
         $settings->linkedin = request()->linkedin;
         $settings->pinterest = request()->pinterest;
         $settings->googleplus = request()->googleplus;
         $settings->instagram = request()->instagram;
-    	$settings->site_youtube = request()->site_youtube;
-    	$settings->site_instagram = request()->site_instagram;
-    	$settings->home_description = request()->home_description;
+        $settings->home_description = request()->home_description;
         $settings->about_description = request()->about_description;
+        $settings->meta_description = request()->meta_description;
+        $settings->meta_keywords = request()->meta_keywords;
 
          if ($request->hasFile('about_image')){
             // add the new photo
@@ -65,10 +62,25 @@ class SettingController extends Controller
 
         }
 
-    	$settings->save();
+         if ($request->hasFile('logo')){
+            // add the new photo
+            $image = $request->file('logo');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $location = 'assets/images/' . $filename;
+            Image::make($image)->resize(240, 100)->save($location);
 
-    	Session::flash('success', 'Website content updated successfully');
+            $oldFilename = $settings->image;
+            // add the new photo
+            $settings->logo = $location;
+            // delete the old photo
+            Storage::delete($oldFilename);
 
-    	return redirect()->back();
+        }
+
+        $settings->save();
+
+        Session::flash('success', 'Website content updated successfully');
+
+        return redirect()->back();
     }
 }
