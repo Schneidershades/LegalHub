@@ -146,7 +146,7 @@ class PageController extends Controller
 
         Session::flash('success', 'Comment was added');
 
-        return redirect()->route('post.single', [$post->slug]);
+        return redirect()->back();
     }
 
 }

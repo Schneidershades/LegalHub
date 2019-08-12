@@ -34,8 +34,6 @@
                                         <a class="smoth-scroll" href="/">Back to Home <div class="ripple-wrapper"></div>
                                         </a>
                                     </li>
-                                    <li><a class="smoth-scroll" href="">Posts</a>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -132,9 +130,13 @@
                                             <p>email</p>
                                             <input type="email" name="email" class="form-control" name="email" id="email" required="required">
                                         </div>
+                                        <div class="form-group col-md-6">
+                                            <p>Phone</p>
+                                            <input type="text" name="phone" class="form-control" name="phone" id="email" required="required">
+                                        </div>
                                         <div class="form-group col-md-12">
                                             <p>message</p>
-                                            <textarea rows="6" name="message" class="form-control" name="comment" id="description" required="required"></textarea>
+                                            <textarea rows="6" name="comment" class="form-control" name="comment" id="description" required="required"></textarea>
                                         </div>
                                         <div class="col-md-12">
                                             <button>add comment</button>
