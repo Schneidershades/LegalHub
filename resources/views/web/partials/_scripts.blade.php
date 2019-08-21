@@ -29,3 +29,24 @@
     <script src="{{URL::to('assets-visitors/js/wow.min.js')}}"></script>
     <script src="{{URL::to('assets-visitors/js/scripts.js')}}"></script>
     <script src="{{URL::to('assets-visitors/js/jquery-ui.js')}}"></script>
+
+    
+ <script type="text/javascript" src="{{ URL::to('js/toastr.min.js') }}"></script>
+
+<script type="text/javascript">
+    @if(Session::has('success'))
+        toastr.success("{{ Session::get('success') }}");
+    @endif
+</script>
+
+<script type="text/javascript">
+    @if(Session::has('info'))
+        toastr.info("{{ Session::get('info') }}");
+    @endif
+</script>
+
+ <script type="text/javascript">
+    @if(Session::has('danger'))
+        toastr.danger("{{ Session::get('danger') }}");
+    @endif
+</script>

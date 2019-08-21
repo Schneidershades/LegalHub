@@ -24,4 +24,6 @@
 <!-- Custom Style-->
 <link href="{{ URL::to('assets/css/app-style.css')}}" rel="stylesheet"/>
 
+<link rel="stylesheet" href="{{ URL::to('css/toastr.min.css') }}">
+
 @yield('stylesheets')

@@ -61,5 +61,6 @@ class CountController extends Controller
         $count->delete();
 
         Session::flash('success', 'The faq details has been deleted');
+        return redirect()->back();
     }
 }
